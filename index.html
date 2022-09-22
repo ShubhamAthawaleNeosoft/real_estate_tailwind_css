@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/output.css">
+</head>
+<body>
+    <header style="background:url(./images/banner.png);background-position: bottom;background-size: cover;"
+        class="h-full bg-no-repeat">
+        <div class="bg-black bg-opacity-60 h-full">
+            <div class="px-10 lg:px-[133px] sm:px-10">
+                <nav class="flex justify-between items-center pt-4 font-[Barlow-semibold]">
+                    <a href="#"><img src="./images/logo-banner.png" alt="logo"></a>
+                    <div onclick="show()"><i class="far flex lg:hidden fa-align-justify text-white"></i></div>
+                    <ul class="hidden lg:flex items-center text-white space-x-5">
+                        <li class="text-lg"><a href="">Home</a></li>
+                        <li class="text-lg"><a href="">About Us</a></li>
+                        <li class="text-lg"><a href="">Choose 2 </a></li>
+                        <li class="text-lg"><a href="">Recently added</a></li>
+                        <li class="text-lg"><a href="">Contact Us</a></li>
+                        <li class="text-lg"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li class="bg-primary-0 px-3 py-1 rounded-lg text-base">
+                            <button class="">
+                                ENG
+                            </button>
+                            <button class="pl-2 ">
+                                Login/Register
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="font-[Barlow-semibold]">
+                    <ul id="abc" class="hidden absolute items-center text-white mt-3">
+                        <li class="text-lg"><a href="">Home</a></li>
+                        <li class="text-lg"><a href="">About Us</a></li>
+                        <li class="text-lg"><a href="">Choose 2 </a></li>
+                        <li class="text-lg"><a href="">Recently added</a></li>
+                        <li class="text-lg"><a href="">Contact Us</a></li>
+                        <li class="text-lg"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li class="bg-primary-0 px-3 py-1 rounded-lg text-base">
+                            <button class="">
+                                ENG
+                            </button>
+                            <button class="pl-2 ">
+                                Login/Register
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="py-48 font-[Barlow-medium]">
+                    <div class="flex items-start text-[17px]">
+                        <div class="flex flex-col items-center">
+                            <button onclick="bgbuy()" class="bg-secondary-0 text-white py-3 px-[38px] rounded-lg"
+                                id="buybtn">Buy</button>
+                            <div id="buytrangle"
+                                class="w-0 h-0 border-solid border-x-[15px] border-t-[30px] border-t-secondary-0 border-b-transparent border-x-transparent">
+                            </div>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <button onclick="bgrent()" class="bg-white text-black py-3 px-[38px] rounded-lg ml-2"
+                                id="rentbtn">Rent</button>
+                            <div id="renttrangle"
+                                class="hidden w-0 h-0 border-solid border-x-[15px] border-t-[30px] border-t-secondary-0 border-b-transparent border-x-transparent">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="buy-content" class="bg-white rounded-xl py-5 px-10 mt-1">
+                        <form class="flex flex-col xl:flex-row justify-center gap-2">
+                            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-2 ">
+                                <input class="border my-2 py-3 px-2 rounded-lg focus:outline-none" type="text"
+                                    placeholder="Enter Keyword.." name="uname" required>
+                                <input class="border my-2 rounded-lg py-3 px-2 focus:outline-none" type="text"
+                                    placeholder="Property Type" name="uname" required>
+                                <input class="border my-2 rounded-lg py-3 px-2 focus:outline-none" type="text"
+                                    placeholder="Location" name="uname" required>
+                                <input class="border my-2 rounded-lg py-3 px-2 focus:outline-none" type="text"
+                                    placeholder="Price" name="uname" required>
+                            </div>
+                            <div>
+                                <button
+                                    class="bg-secondary-0 my-2 py-3 px-[64px]  text-white rounded-lg">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="rent-content"
+                        class="bg-white rounded-xl py-5 px-10 mt-1 border-2 hidden border-purple-500">
+                        <form class="flex flex-col xl:flex-row justify-center gap-2">
+                            <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-2 ">
+                                <input class="border my-2 py-3 px-2 rounded-lg focus:outline-none" type="text"
+                                    placeholder="Enter Keyword..." name="uname" required>
+                                <input class="border my-2 rounded-lg py-3 px-2 focus:outline-none" type="text"
+                                    placeholder="Rent Type" name="uname" required>
+                                <input class="border my-2 rounded-lg py-3 px-2 focus:outline-none" type="text"
+                                    placeholder="Flat Location" name="uname" required>
+                                <input class="border my-2 rounded-lg py-3 px-2 focus:outline-none" type="text"
+                                    placeholder="Rent" name="uname" required>
+                            </div>
+                            <div>
+                                <button
+                                    class="bg-secondary-0 my-2 py-3 px-[64px]  text-white rounded-lg">Search</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="mt-[-2%]">
+        <img class="w-full" src="./images/bottom-path.png" alt="bottom-clippath">
+        <div class="flex justify-center mt-[-60px]">
+            <div class="h-16 w-16 bg-white border-2 flex justify-center items-center rotate-45"
+                style="border-radius: 90% 86% 100% 83% / 75% 56% 75% 74% ">
+                <i class='fal fa-angle-right text-primary-0 text-3xl rotate-45'></i>
+            </div>
+        </div>
+    </div>
+    <section class="mr-0 xl:mr-[133px] ">
+        <div class="flex justify-between lg:flex-row flex-col items-center ">
+            <div class="flex items-end bg-no-repeat lg:w-[600px] xl:w-[800px] w-full h-[500px] lg:h-[800px] mt-[100px] lg:mt-0 lg:ml-[-100px] bg-cover"
+                style="background: url(./images/banner-hand-bg.png);background-position: top center;">
+                <div class="flex items-end h-[210px] w-[849px]  ml-[-48px]"
+                    style="background: url(./images/Ellipse\ 1.png);background-size:cover;">
+                    <div class="ml-[120px] mb-28">
+                        <img src="./images/banner-hand-home.png" alt="home-hand">
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-[590px] w-full mt-20 lg:mt-0 px-1 sm:px-5 lg:px-0">
+                <p class="text-2xl text-[#A5A5A5] text-center lg:text-left font-[Barlow-medium]">WHO WE ARE</p>
+                <h2 class="text-[40px] text-[#444444] text-center lg:text-left font-[Barlow-medium]">We develop quality
+                    infrastructure and real estate projects since
+                    1999</h2>
+                <div class="flex justify-center lg:justify-start my-6"><span
+                        class="border-secondary-0 border-[3px] h-0 w-20 bg-secondary-0"></span></div>
+                <a class="text-2xl text-[#767676] flex justify-center lg:justify-start font-[Barlow-regular]"
+                    href="#">Read More
+                    <div class="inline-flex shadow-2xl border px-2 text-xl ml-2"
+                        style="border-radius: 40% 70% 70% 40% / 47% 50% 50% 47% ;box-shadow: 50px black;">></div>
+                </a>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-7">
+                    <div class="flex justify-center lg:justify-start items-center">
+                        <div class="bg-primary-0 text-white flex items-center justify-center text-4xl h-[65px] w-[73px]"
+                            style="border-radius: 40% 70% 70% 40% / 47% 50% 50% 47% ;">
+                            <span class="font-sans">89+</span>
+                        </div>
+                        <span class="text-xl pl-1 font-[Barlow-semibold]">Completed Project</span>
+                    </div>
+                    <div class="flex justify-center lg:justify-start items-center">
+                        <div class="bg-primary-0 text-white flex items-center justify-center text-4xl h-[65px] w-[73px]"
+                            style="border-radius: 40% 70% 70% 40% / 47% 50% 50% 47% ;">
+                            <span class="font-sans">20</span>
+                        </div>
+                        <span class="text-xl pl-1 font-[Barlow-semibold]">Winning Project</span>
+                    </div>
+                    <div class="flex justify-center lg:justify-start items-center">
+                        <div class="bg-primary-0 text-white flex items-center justify-center text-4xl h-[65px] w-[73px]"
+                            style="border-radius: 40% 70% 70% 40% / 47% 50% 50% 47% ;">
+                            <span class="font-sans">50</span>
+                        </div>
+                        <span class="text-xl pl-1 font-[Barlow-semibold]">On going Project</span>
+                    </div>
+                    <div class="flex justify-center lg:justify-start items-center">
+                        <div class="bg-primary-0 text-white flex items-center justify-center text-4xl h-[65px] w-[73px]"
+                            style="border-radius: 40% 70% 70% 40% / 47% 50% 50% 47% ;">
+                            <span class="font-sans">10</span>
+                        </div>
+                        <span class="text-xl pl-1 font-[Barlow-semibold]">Up coming Project</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="px-0 xl:px-[133px] py-20 ">
+        <div class="flex flex-col lg:flex-row justify-around xl:justify-between items-center">
+            <div class="w-full px-1 sm:px-0 sm:w-[394px]">
+                <p class="text-2xl text-[#A5A5A5] lg:text-left text-center font-[Barlow-medium]">WHAT WE BUILD</p>
+                <h2 class="text-[40px] text-[#444444] lg:text-left text-center font-[Barlow-medium]">Featured Projects
+                </h2>
+                <div class="flex my-6 justify-center lg:justify-start"><span
+                        class="border-secondary-0 border-[3px] h-0 w-20 bg-secondary-0"></span></div>
+                <a class="text-2xl text-[#767676] flex justify-center font-[Barlow-regular] lg:justify-start"
+                    href="#">View All Project
+                    <div class="inline-flex shadow-2xl border px-2 text-xl ml-2"
+                        style="border-radius: 40% 70% 70% 40% / 47% 50% 50% 47% ;box-shadow: 50px black;">></div>
+                </a>
+                <div
+                    class="flex justify-center sm:justify-between flex-col sm:flex-row gap-8 text-[#444444] mt-6 font-[Barlow-regular]">
+                    <span class="text-3xl text-center sm:text-left">Lorem Ipsum</span>
+                    <span class="text-2xl text-center sm:text-left">Dummy Text, 123</span>
+                </div>
+                <div class="mt-4">
+                    <p class="text-3xl bg-[#E8E7E7] text-[#444444] pl-9 py-1 text-center sm:text-left font-sans"><span
+                            class="font-[Barlow-bold]">Area : </span>450m2</p>
+                </div>
+            </div>
+            <!-- <div class="bg-primary-0 w-[633px] h-[579px] " style="border-radius: 59% 46% 48% 71% / 30% 52% 69% 84% ;"> -->
+            <div class="w-full md:w-[633px]  h-[579px] mt-20 lg:mt-0"
+                style="background: url(./images/blob\ \(9\).png);background-repeat: no-repeat;background-position: center;">
+                <div class="flex justify-center">
+                    <div class="owl-carousel owl-theme w-[300px] sm:w-[400px] md:w-[457px] slider ">
+                        <div class="item">
+                            <img class=" h-[520px]" src="./images/slider-1.png" alt="slider1">
+                        </div>
+                        <div class="item">
+                            <img class=" h-[520px]" src="./images/properties_img2.png" alt="slider1">
+                        </div>
+                        <div class="item">
+                            <img class=" h-[520px]" src="./images/properties_img3.png" alt="slider1">
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-[-10%] z-[1] relative">
+                    <p
+                        class="inline border-t-primary-0 border-r-primary-0 border-t-4 border-r-4 rounded-2xl bg-secondary-0 px-16 py-5 text-3xl font-bold text-white">
+                        60,000 lac</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="px-[10px] xl:px-[133px]">
+        <div class="flex flex-col items-center">
+            <p class="text-2xl text-[#A5A5A5] font-[Barlow-medium]">OUR BIGGEST AWARD</p>
+            <h2 class="text-[40px] text-[#444444] font-[Barlow-medium]">Testimonials</h2>
+            <div class="flex my-6"><span class="border-secondary-0 border-[3px] h-0 w-20 bg-secondary-0"></span></div>
+        </div>
+        <div class="bg-[#FAFAFA] text-[#444444] flex flex-wrap gap-2 justify-around rounded-xl">
+            <div class="py-14 ">
+                <img src="./images/profile_1.png" alt="profile1">
+                <h3 class="text-center text-2xl py-6 font-[Barlow-bold]">John Doe</h3>
+                <p class="w-80 text-center text-xl font-[Barlow-semibold]">“The Group was very helpful and flexible
+                    towards my needs and
+                    schedule. They have coordinated and cooperated with me."</p>
+            </div>
+            <div class="py-14">
+                <img src="./images/profile_2.png" alt="profile2">
+                <h3 class="text-center text-2xl py-6 font-[Barlow-bold]">John Doe</h3>
+                <p class="w-80 text-center text-xl font-[Barlow-semibold]">“The Group was very helpful and flexible
+                    towards my needs and
+                    schedule. They have coordinated and cooperated with me."</p>
+            </div>
+            <div class="py-14">
+                <img src="./images/profile_3.png" alt="profile3">
+                <h3 class="text-center text-2xl py-6 font-[Barlow-bold]">John Doe</h3>
+                <p class="w-80 text-center text-xl font-[Barlow-semibold]">“The Group was very helpful and flexible
+                    towards my needs and
+                    schedule. They have coordinated and cooperated with me."</p>
+            </div>
+        </div>
+    </section>
+    <section class="px-[30px] xl:px-[133px] my-28">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <p class="text-2xl text-[#A5A5A5] font-[Barlow-medium]">PROPERTY TYPES</p>
+                <h2 class="text-[40px] text-[#444444] text-center md:text-left font-[Barlow-medium]">Properties</h2>
+                <div class="flex my-6 ml-2 justify-center md:justify-start"><span
+                        class="border-secondary-0 border-[3px] h-0 w-20 bg-secondary-0"></span></div>
+            </div>
+            <div>
+                <ul class="flex flex-wrap text-sm font-[Barlow-medium] text-cente text-[#444444]">
+                    <li class="mr-2" role="presentation">
+                        <button data-id="tab1"
+                            class="inline-block py-2 px-8 text-white bg-primary-0 rounded-lg active">ALL</button>
+                    </li>
+                    <li class="mr-2">
+                        <button data-id="tab2"
+                            class="inline-block py-2 px-6 rounded-lg hover:text-gray-900 hover:bg-gray-100">VILLA</button>
+                    </li>
+                    <li class="mr-2">
+                        <button data-id="tab3"
+                            class="inline-block py-2 px-4 rounded-lg hover:text-gray-900 hover:bg-gray-100">OFFICES</button>
+                    </li>
+                    <li class="mr-2">
+                        <button data-id="tab4"
+                            class="inline-block py-2 px-3 rounded-lg hover:text-gray-900 hover:bg-gray-100">APARTMENT</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="tab1" class="tab">
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img1.png" alt="properties1">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img2.png" alt="properties2">
+            </div>
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9" src="./images/properties_img3.png" alt="properties3">
+                <img class="pt-9" src="./images/properties_img4.png" alt="properties4">
+                <img class="pt-9" src="./images/properties_img5.png" alt="properties5">
+                <img class="pt-9" src="./images/properties_img6.png" alt="properties6">
+            </div>
+        </div>
+        <div id="tab2" class="tab px-2 hidden">
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img2.png" alt="properties2">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img1.png" alt="properties1">
+            </div>
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9" src="./images/properties_img3.png" alt="properties3">
+                <img class="pt-9" src="./images/properties_img4.png" alt="properties4">
+                <img class="pt-9" src="./images/properties_img5.png" alt="properties5">
+                <img class="pt-9" src="./images/properties_img6.png" alt="properties6">
+            </div>
+        </div>
+        <div id="tab3" class="tab px-2 hidden">
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9" src="./images/properties_img3.png" alt="properties3">
+                <img class="pt-9" src="./images/properties_img4.png" alt="properties4">
+                <img class="pt-9" src="./images/properties_img5.png" alt="properties5">
+                <img class="pt-9" src="./images/properties_img6.png" alt="properties6">
+            </div>
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img2.png" alt="properties2">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img1.png" alt="properties1">
+            </div>
+        </div>
+        <div id="tab4" class="tab px-2 hidden">
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9" src="./images/properties_img5.png" alt="properties5">
+                <img class="pt-9" src="./images/properties_img6.png" alt="properties6">
+                <img class="pt-9" src="./images/properties_img3.png" alt="properties3">
+                <img class="pt-9" src="./images/properties_img4.png" alt="properties4">
+            </div>
+            <div class="flex gap-2 flex-wrap xl:flex-nowrap justify-evenly xl:justify-between">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img2.png" alt="properties2">
+                <img class="pt-9 w-[548px] md:w-[500px]" src="./images/properties_img1.png" alt="properties1">
+            </div>
+        </div>
+    </section>
+    <section class="pl-5 lg:pl-[133px]" style="background: url(./images/video-bg.png);">
+        <div class="flex lg:flex-row flex-col justify-between items-center py-20">
+            <div>
+                <p class="text-2xl text-[#A5A5A5] text-center lg:text-left font-[Barlow-medium]">BEST IS HERE</p>
+                <h2 class="text-[40px] text-[#444444] text-center lg:text-left font-[Barlow-medium]">Our Videos</h2>
+                <div class="flex justify-center lg:justify-start my-6"><span
+                        class="border-secondary-0 border-[3px] h-0 w-20 bg-secondary-0"></span></div>
+            </div>
+            <div class="mt-10 lg:mt-0 w-full lg:w-3/4" style=" overflow: hidden;">
+                <div class="owl-carousel owl-theme videoslider">
+                    <div class="item">
+                        <div class="h-[305px] w-[300px] flex items-center justify-center"
+                            style="background: url(./images/video-1.png);">
+                            <div class="border flex justify-center items-center bg-white h-16 w-16 rotate-[-45deg]"
+                                style=" border-radius: 90% 86% 100% 83% / 75% 56% 75% 74%"><i
+                                    class="fas fa-play text-gray-400 text-xl rotate-[45deg]"></i></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="border border-secondary-0 h-[305px] w-[300px] overflow-hidden flex items-center"
+                            style="border-radius: 60% 46% 49% 63% / 56% 52% 59% 56% ;">
+                            <iframe width="300" height="450"
+                                src="https://www.youtube.com/embed/7EHnQ0VM4KY?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
+                                frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="h-[305px] w-[300px] flex items-center justify-center"
+                            style="background: url(./images/video-2.png);">
+                            <div class="border flex justify-center items-center bg-white h-16 w-16 rotate-[-45deg]"
+                                style=" border-radius: 90% 86% 100% 83% / 75% 56% 75% 74%"><i
+                                    class="fas fa-play text-gray-400 text-xl rotate-[45deg]"></i></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="h-[305px] w-[300px] flex items-center justify-center"
+                            style="background: url(./images/video-3.png);">
+                            <div class="border flex justify-center items-center bg-white h-16 w-16 rotate-[-45deg]"
+                                style=" border-radius: 90% 86% 100% 83% / 75% 56% 75% 74%"><i
+                                    class="fas fa-play text-gray-400 text-xl rotate-[45deg]"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="xl:px-[133px] md:px-20 my-32">
+        <div class="flex xl:flex-row flex-col justify-between items-center">
+            <div class="font-medium font-sans">
+                <h6 class="text-sm text-primary-0 text-center xl:text-left">QUICK INQUIRY</h6>
+                <h3 class="text-3xl text-[#444444]">Want more information?</h3>
+            </div>
+            <div class="flex flex-wrap lg:flex-nowrap justify-center gap-7 mt-7 xl:mt-0 font-sans">
+                <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 px-1 sm:px-0 w-full sm:w-[520px]">
+                    <input class="border py-3 px-2 rounded-lg focus:outline-none" type="text" placeholder="Your Name"
+                        name="uname" required>
+                    <input class="border py-3 px-2 rounded-lg focus:outline-none" type="text" placeholder="Phone Number"
+                        name="number" required>
+                    <input class="border py-3 px-2 rounded-lg focus:outline-none" type="text" placeholder="Email ID"
+                        name="emailid" required>
+                    <input class="border py-3 px-2 rounded-lg focus:outline-none" type="text" placeholder="Project"
+                        name="project" required>
+                </form>
+                <button type="button"
+                    class="border bg-[#00387A] text-white self-stretch rounded-xl w-48 flex flex-col justify-center items-center">
+                    <i class="fal fa-phone-alt text-4xl"></i>
+                    <p class="text-base w-1/2 text-center pt-1">Get a Call Back</p>
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer
+        style="background: url(./images/footer-bg.png);background-position: bottom;background-size: cover; background-repeat: no-repeat;">
+        <div class="bg-black w-full h-full opacity-80 font-sans">
+            <div class="xl:px-[133px] lg:px-14 px-10 ">
+                <div class="flex justify-between lg:flex-nowrap flex-wrap gap-5 text-white ">
+                    <ul class="space-y-2 py-5 md:py-12 lg:py-16">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us </a></li>
+                        <li><a href="#">Choose 2</a></li>
+                        <li><a href="#">Recently added</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                    <div class="py-5 md:py-12 lg:py-16">
+                        <h3 class="text-lg">GET IN TOUCH</h3>
+                        <h5 class="pt-7 pb-3">PHONE</h5>
+                        <a href="#" class="text-2xl">+(12) 9871234344</a>
+                        <p class="w-52 pt-6">56, clity ford Street, Lorem G1 HUL1, New City, Ipsum</p>
+                    </div>
+                    <div class="py-5 md:py-12 lg:py-16">
+                        <h5 class="pb-2">Email</h5>
+                        <a class="text-2xl" href="#">contact@example.com</a>
+                        <div class="bg-[#00387A] mt-5 flex justify-evenly rounded py-2 text-xl">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"> <i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="py-5 md:py-12 lg:py-16">
+                        <h3 class="text-lg">SUBSCRIBE TO NEWSLETTER</h3>
+                        <form class="pt-5 lg:pt-10">
+                            <input class="block text-black rounded py-2 px-9 focus:outline-none" type="text"
+                                placeholder="Enter your email address" name="emailid" required>
+                            <button class="bg-[#00387A] px-12 py-2 rounded mt-7" type="button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="border-t mt-2 border-t-gray-400 text-gray-400 py-6">
+                    <p class="text-center text-sm">© 2020 – GMTCC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>

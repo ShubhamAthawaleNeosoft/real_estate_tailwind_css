@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'Barlow-bold';
+    src: url('../fonts/barlow/Barlow-Bold.woff2') format('woff2'),
+        url('../fonts/barlow/Barlow-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-regular';
+    src: url('../fonts/barlow/Barlow-Regular.woff2') format('woff2'),
+        url('../fonts/barlow/Barlow-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-medium';
+    src: url('../fonts/barlow/Barlow-Medium.woff2') format('woff2'),
+        url('../fonts/barlow/Barlow-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Barlow-semibold';
+    src: url('../fonts/barlow/Barlow-SemiBold.woff2') format('woff2'),
+        url('../fonts/barlow/Barlow-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+.slider .owl-nav .owl-next {
+    position: absolute;
+    top: calc((50% - 55px));
+    right: -40px;
+    font-size: 40px !important;
+    width: 73px;
+    height: 73px;
+    font-size: 40px !important;
+    line-height: 0px !important;
+    background-color: white !important;
+    border-radius: 90% 86% 100% 83% / 75% 56% 75% 74% !important;
+    transform: rotate(-45deg);
+}
+
+.slider .owl-nav .owl-prev {
+    position: absolute;
+    top: calc((50% - 55px));
+    left: -40px;
+    width: 73px;
+    height: 73px;
+    font-size: 40px !important;
+    line-height: 0px !important;
+    background-color: white !important;
+    border-radius: 90% 86% 100% 83% / 75% 56% 75% 74% !important;
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+
+.slider .owl-nav .owl-prev i,
+.slider .owl-nav .owl-next i,
+.slider .owl-nav .owl-prev:hover i,
+.slider .owl-nav .owl-next:hover i {
+    color: #5559A7;
+}
